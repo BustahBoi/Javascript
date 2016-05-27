@@ -23,12 +23,12 @@ Match.prototype.setScores = function (scoreA, tryA, scoreB, tryB) {
 Match.prototype.calculatePoints = function (scoreA, tryA, scoreB, tryB) {
 	'use strict';
 	var pointsA, pointsB;
-	this.winner(scoreA, scoreB);
-	this.tries(tryA, tryB);
+	pointsA = this.winner(scoreA, scoreB);
+	pointsB = this.winner(scoreB, scoreA);
+//	this.tries(tryA, tryB);
 	this.teamA.increasePoints(pointsA);
 	this.teamB.increasePoints(pointsB);
-	this.pointsA = pointsA;
-	this.pointsB = pointsB;
+
 };
 
 Match.prototype.winner = function (scoreA, scoreB) {
@@ -53,7 +53,6 @@ Match.prototype.winner = function (scoreA, scoreB) {
 		pointsB += draw;
 	}
 	return pointsA;
-	return pointsB;
 };
 
 Match.prototype.tries = function (tryA, tryB) {
@@ -66,16 +65,8 @@ Match.prototype.tries = function (tryA, tryB) {
 	} else if (tryB > tryOffset) {
 		pointsB += bonus;
 	}
-	return pointsA;
-	return pointsB;
-};
-
-
-Match.prototype.toString = function () {
-	"use strict";
-	var result, teamA;
-	result =   " : " + this.teamA + " vs " + this.teamB;
-	return result;
+	this.pointsA = pointsA;
+	this.pointsB = pointsB;
 };
 
 Match.prototype.winLossDrawA = function (team) {
@@ -103,5 +94,12 @@ Match.prototype.winLossDrawB = function () {
 	} else {
 		result += 'draw'
 	}
+	return result;
+};
+
+Match.prototype.toString = function () {
+	"use strict";
+	var result, teamA;
+	result =   " : " + this.teamA + " vs " + this.teamB;
 	return result;
 };

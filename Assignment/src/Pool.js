@@ -17,20 +17,11 @@ Pool.prototype.addMatch = function (teamA, teamB) {
 	this.allMatches.push (newMatch);
 };
 
-Pool.prototype.addMatchScores = function (newScoreA, teamB) {
-	"use strict";
-	var newMatchScores;
-	newMatchScores = newMatchScores (teamA, teamB);
-	this.allMatches.push (newMatch);
-};
-
-
 Pool.prototype.setScores = function (scoreA, tryA, scoreB, tryB) {
 	"use strict";
 	var newScore;
 	newScore = newScore (scoreA, tryA, scoreB, tryB)
 	this.allMatches.push(newScore);
-	
 };
 
 Pool.prototype.findMatch = function (targetMatch, offset) {
