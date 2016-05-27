@@ -2,13 +2,12 @@ var Pool = function (newName) {
 	this.name = newName;
 	this.allTeams = [];
 	this.allMatches = [];
-}
+};
 
 Pool.prototype.addTeam = function (aTeam) {
 	"use strict";
 	this.allTeams.push (aTeam);
 };
-
 
 Pool.prototype.addMatch = function (teamA, teamB) {
 	"use strict";

@@ -12,14 +12,14 @@ Team.prototype.increasePoints = function (newPoints) {
 	this.teamPoints += newPoints;	
 };
 
+Team.prototype.getPoints = function () {
+	'use strict';
+	return this.teamPoints;
+};
+
 Team.prototype.toString = function () {
 	"use strict";
 	var result;
 	result =  this.country ;
 	return result;
-};
-
-Team.prototype.getPoints = function () {
-	'use strict';
-	return this.teamPoints;
 };
