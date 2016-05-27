@@ -79,7 +79,7 @@ Match.prototype.tries = function (tryA, tryB) {
 	return pointsB;
 };
 
-Match.prototype.winLossDrawA = function (team) {
+Match.prototype.winLossDrawA = function (pointsA, pointsB) {
 	'use strict';
 	var result;
 	result = '';
