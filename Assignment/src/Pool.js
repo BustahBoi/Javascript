@@ -44,7 +44,6 @@ Pool.prototype.sortTeamByPoints = function () {
 	});
 };
 
-
 Pool.prototype.getTeam = function () {
 	"use strict";
 	var result, aTeam, aMatch;
@@ -61,8 +60,9 @@ Pool.prototype.getPointDetails = function () {
 	result= this.toString() + '<br>';
 	for (aMatch of this.allMatches) {
 		result += TAB + aMatch.teamA + ' ' +aMatch.scoreA + '  ' +  aMatch.pointsA;
-		result += ' ' +  aMatch.winLossDrawA() + ' vs' +' ' + aMatch.teamB ;
-		result += ' ' + aMatch.scoreB + '  ' +  aMatch.pointsB + ' ' +  aMatch.winLossDrawB() + '<br>';
+		result += ' ' +  aMatch.winLossDraw(aMatch.pointsA, aMatch.pointsB) + ' vs' ;
+		result += ' ' + aMatch.teamB + ' ' + aMatch.scoreB + '  ' +  aMatch.pointsB;
+		result += ' ' +  aMatch.winLossDraw(aMatch.pointsB, aMatch.pointsA) + '<br>';
 	}
 	return result;
 };
@@ -82,9 +82,6 @@ Pool.prototype.getMatch = function () {
 	}
 	return result;
 };
-
-
-
 
 Pool.prototype.toString = function () {
 	"use strict";
