@@ -25,17 +25,17 @@ Match.prototype.calculatePoints = function (scoreA, tryA, scoreB, tryB) {
 	var pointsA, pointsB;
 	pointsA = 0;
 	pointsB = 0;
-	pointsA += this.winner(scoreA, scoreB);
-	pointsB += this.winner(scoreB, scoreA);
-	pointsA += this.tries(tryA, tryB);
-	pointsB += this.tries(tryB, tryA);
+	pointsA += this.setPoints(scoreA, scoreB);
+	pointsB += this.setPoints(scoreB, scoreA);
+	pointsA += this.tryPoints(tryA, tryB);
+	pointsB += this.tryPoints(tryB, tryA);
 	this.teamA.increasePoints(pointsA);
 	this.teamB.increasePoints(pointsB);
 	this.pointsA = pointsA;
 	this.pointsB = pointsB;
 };
 
-Match.prototype.winner = function (scoreA, scoreB) {
+Match.prototype.setPoints = function (scoreA, scoreB) {
 	'use strict';
 	var aWin, scoreOffset, bonus, draw, pointsA, pointsB;
 	pointsA = 0;
@@ -62,7 +62,7 @@ Match.prototype.winner = function (scoreA, scoreB) {
 	return pointsB;
 };
 
-Match.prototype.tries = function (tryA, tryB) {
+Match.prototype.tryPoints = function (tryA, tryB) {
 	'use strict';
 	var tryOffset, bonus, pointsA, pointsB;
 	tryOffset = 3;
@@ -78,7 +78,7 @@ Match.prototype.tries = function (tryA, tryB) {
 	return pointsB;
 };
 
-Match.prototype.winLossDraw = function (a, b) {
+Match.prototype.outcome = function (a, b) {
 	'use strict';
 	var result;
 	result = '';

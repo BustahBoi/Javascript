@@ -67,7 +67,6 @@ match = the2016OlympicMens7s.findMatch(6);//fij, nzl - both teams get a just bon
 match.setScores(22, 4, 42, 4);
 match = the2016OlympicMens7s.findMatch(7);//fij, arg - draw team A just bonus 1
 match.setScores(22, 4, 22, 2);
-
 match = the2016OlympicMens7s.findMatch(8);//fij, jpn - draw team B just bonus 1
 match.setScores(22, 2, 22, 4);
 match = the2016OlympicMens7s.findMatch(9);//fij, usa - team A good bonus 1
@@ -84,7 +83,6 @@ match = the2016OlympicMens7s.findMatch(14);//arg, usa
 match.setScores(14, 2, 7, 1);
 match = the2016OlympicMens7s.findMatch(15);//jpn, usa
 match.setScores(7, 1, 14, 2);
-//POOL B
 match = the2016OlympicMens7s.findMatch(16);//rsa, aus
 match.setScores(7, 1, 12, 2);
 match = the2016OlympicMens7s.findMatch(17);//rsa, gbr - bonus 1 & 2
