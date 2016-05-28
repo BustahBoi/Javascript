@@ -1,7 +1,5 @@
-const BLANK = " ";
 const SPACE = "&nbsp;";
 const TAB = SPACE.repeat(4);
-const NEWLINE = "<br>";
 
 var Olympic7s = function () {
 	this.allMyTeams = [];
@@ -25,14 +23,14 @@ Olympic7s.prototype.addTeam = function (newCountry, newCode, newHemisphere, newR
 
 Olympic7s.prototype.findMatch = function (targetMatch) {
 	'use strict';
-	var foundMatch, aMatch, aOffset, bOffset;
+	var foundMatch, aMatch, poolA, poolB;
 	foundMatch = null;
-	aOffset = 1;
-	bOffset = 16;
-	if (targetMatch < bOffset) {
-	foundMatch = this.poolA.findMatch(targetMatch, aOffset);
+	poolA = 1;
+	poolB = 16;
+	if (targetMatch < poolB) {
+	foundMatch = this.poolA.findMatch(targetMatch, poolA);
 	} else {
-	foundMatch = this.poolB.findMatch(targetMatch, bOffset);
+	foundMatch = this.poolB.findMatch(targetMatch, poolB);
 	}
 	return foundMatch;
 };
