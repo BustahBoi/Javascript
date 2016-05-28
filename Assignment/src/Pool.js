@@ -2,13 +2,12 @@ var Pool = function (newName) {
 	this.name = newName;
 	this.allTeams = [];
 	this.allMatches = [];
-}
+};
 
 Pool.prototype.addTeam = function (aTeam) {
 	"use strict";
 	this.allTeams.push (aTeam);
 };
-
 
 Pool.prototype.addMatch = function (teamA, teamB) {
 	"use strict";
@@ -17,20 +16,11 @@ Pool.prototype.addMatch = function (teamA, teamB) {
 	this.allMatches.push (newMatch);
 };
 
-Pool.prototype.addMatchScores = function (newScoreA, teamB) {
-	"use strict";
-	var newMatchScores;
-	newMatchScores = newMatchScores (teamA, teamB);
-	this.allMatches.push (newMatch);
-};
-
-
 Pool.prototype.setScores = function (scoreA, tryA, scoreB, tryB) {
 	"use strict";
 	var newScore;
 	newScore = newScore (scoreA, tryA, scoreB, tryB)
 	this.allMatches.push(newScore);
-	
 };
 
 Pool.prototype.findMatch = function (targetMatch, offset) {
@@ -53,7 +43,6 @@ Pool.prototype.sortTeamByPoints = function () {
 	});
 };
 
-
 Pool.prototype.getTeam = function () {
 	"use strict";
 	var result, aTeam, aMatch;
@@ -70,8 +59,9 @@ Pool.prototype.getPointDetails = function () {
 	result= this.toString() + '<br>';
 	for (aMatch of this.allMatches) {
 		result += TAB + aMatch.teamA + ' ' +aMatch.scoreA + '  ' +  aMatch.pointsA;
-		result += ' ' +  aMatch.winLossDrawA() + ' vs' +' ' + aMatch.teamB ;
-		result += ' ' + aMatch.scoreB + '  ' +  aMatch.pointsB + ' ' +  aMatch.winLossDrawB() + '<br>';
+		result += ' ' +  aMatch.winLossDraw(aMatch.pointsA, aMatch.pointsB) + ' vs' ;
+		result += ' ' + aMatch.teamB + ' ' + aMatch.scoreB + '  ' +  aMatch.pointsB;
+		result += ' ' +  aMatch.winLossDraw(aMatch.pointsB, aMatch.pointsA) + '<br>';
 	}
 	return result;
 };
@@ -91,9 +81,6 @@ Pool.prototype.getMatch = function () {
 	}
 	return result;
 };
-
-
-
 
 Pool.prototype.toString = function () {
 	"use strict";

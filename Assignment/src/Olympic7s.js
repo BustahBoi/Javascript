@@ -7,7 +7,6 @@ var Olympic7s = function () {
 	this.allMyTeams = [];
 	this.poolA = new Pool ("A");
 	this.poolB = new Pool ("B");
-
 };
 
 Olympic7s.prototype.addTeam = function (newCountry, newCode, newHemisphere, newRanking, poolCode) {
@@ -38,8 +37,6 @@ Olympic7s.prototype.findMatch = function (targetMatch) {
 	return foundMatch;
 };
 
-
-
 Olympic7s.prototype.getMatchByPool = function () {
 	"use strict";
 	var result;
@@ -65,15 +62,11 @@ Olympic7s.prototype.getMatchDetails = function () {
 	return result;
 };
 
-
-
 Olympic7s.prototype.getAll = function() {
 	"use strict";
 	var result;
-
 	result = this.getMatchByPool() + '<br>';
 	result += this.getTeamsByPoints() + '<br>';
 	result += this.getMatchDetails() + '<br>';
-
 	return result;
 };
