@@ -1,14 +1,7 @@
 var Match = function (teamA, teamB) {
 	"use strict";
-	var pointsA, pointsB, scoreA, scoreB, tryA, tryB;
 	this.teamA = teamA;
 	this.teamB = teamB;
-	this.pointsA = pointsA;
-	this.pointsB = pointsB;
-	this.scoreA = scoreA;
-	this.tryA = tryA;
-	this.scoreB = scoreB;
-	this.tryB = tryB;
 };
 
 Match.prototype.setScores = function (scoreA, tryA, scoreB, tryB) {
@@ -37,20 +30,20 @@ Match.prototype.calculatePoints = function (scoreA, tryA, scoreB, tryB) {
 
 Match.prototype.setPoints = function (scoreA, scoreB) {
 	'use strict';
-	var aWin, scoreOffset, bonus, draw, pointsA, pointsB;
+	var win, scoreOffset, bonus, draw, pointsA, pointsB;
 	pointsA = 0;
 	pointsB = 0;
-	aWin = 4;
+	win = 4;
 	scoreOffset = 8;
 	bonus = 1;
 	draw = 2;
 	if (scoreA > scoreB) {
-		pointsA += aWin;
+		pointsA += win;
 		if (scoreA - scoreB < scoreOffset) {
 			pointsB += bonus;
 		}
 	} else if (scoreB > scoreA) {
-		pointsB += aWin;
+		pointsB += win;
 		if (scoreB - scoreA < scoreOffset) {
 			pointsA += bonus;
 		}

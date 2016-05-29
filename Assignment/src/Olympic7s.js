@@ -23,15 +23,20 @@ Olympic7s.prototype.addTeam = function (newCountry, newCode, newHemisphere, newR
 
 Olympic7s.prototype.findMatch = function (targetMatch) {
 	'use strict';
-	var foundMatch, aMatch, poolA, poolB;
-	foundMatch = null;
-	poolA = 1;
-	poolB = 16;
-	if (targetMatch < poolB) {
-	foundMatch = this.poolA.findMatch(targetMatch, poolA);
-	} else {
-	foundMatch = this.poolB.findMatch(targetMatch, poolB);
-	}
+	var foundMatch, aMatch;
+	if (targetMatch < 16) {
+		for (aMatch of this.poolA.allMatches) {
+			if (this.poolA.allMatches.indexOf(aMatch) + 1 === targetMatch) {
+				foundMatch = aMatch;
+				}
+			}
+		} else {
+			for (aMatch of this.poolB.allMatches) {
+			if (this.poolB.allMatches.indexOf(aMatch) + 16 === targetMatch) {
+				foundMatch = aMatch;
+					}
+				}
+			}
 	return foundMatch;
 };
 

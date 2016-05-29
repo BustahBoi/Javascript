@@ -4,7 +4,7 @@ var Team = function (newCountry, newCode, newHemisphere, newRanking) {
 	this.code = newCode;
 	this.hemisphere = newHemisphere;
 	this.ranking = newRanking;
-	this.teamPoints = 0;
+	this.teamPoints = null;
 };
 
 Team.prototype.increasePoints = function (newPoints) {
