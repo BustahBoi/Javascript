@@ -23,19 +23,6 @@ Pool.prototype.setScores = function (scoreA, tryA, scoreB, tryB) {
 	this.allMatches.push(newScore);
 };
 
-Pool.prototype.findMatch = function (targetMatch, pool) {
-	'use strict';
-	var foundMatch, aMatch;
-	foundMatch = null;
-	for (aMatch of this.allMatches) {
-			if ((this.allMatches.indexOf(aMatch) + pool)=== targetMatch) {
-				foundMatch = aMatch;
-				break;
-			}
-	}
-	return foundMatch;
-};
-
 Pool.prototype.sortTeamByPoints = function () {
 	"use strict";
 	this.allTeams.sort(function (a, b) {
