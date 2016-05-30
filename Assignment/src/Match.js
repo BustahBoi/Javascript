@@ -1,7 +1,14 @@
 var Match = function (teamA, teamB) {
 	"use strict";
+	var tryA, tryB, scoreA, scoreB, pointsA, pointsB;
 	this.teamA = teamA;
 	this.teamB = teamB;
+	this.tryA = tryA;
+	this.tryB = tryB;
+	this.scoreA = scoreA;
+	this.scoreB = scoreB;
+	this.pointsA = pointsA;
+	this.pointsB = pointsB;
 };
 
 Match.prototype.setScores = function (scoreA, tryA, scoreB, tryB) {
